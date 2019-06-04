@@ -1,1998 +1,921 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<!-- For IE -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<!-- For Resposive Device -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Sunny Tour Leader</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<title>Sunny Tour Leader</title>
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
 
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
-		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" href="css/aos.css">
 
+	<link rel="stylesheet" href="css/ionicons.min.css">
 
-		<!-- Fix Internet Explorer ______________________________________-->
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="vendor/html5shiv.js"></script>
-			<script src="vendor/respond.js"></script>
-		<![endif]-->
+<body>
 
-		<style>
-			.googleCalendar{
-			position: relative;
-			height: 100%;
-			width: 100%;
-			padding-bottom: 50%;
-			}
-
-			.googleCalendar iframe{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			}
-
-		.cd-container {
-		width: 90%;
-		max-width: 1080px;
-		margin: 0 auto;
-		background: #ffffff;
-		padding: 0 10%;
-		border-radius: 2px;
-		}
-		.cd-container::after {
-		content: '';
-		display: table;
-		clear: both;
-		}
-
-		/* -------------------------------- 
-
-		Main components 
-
-		-------------------------------- */
-
-
-		#cd-timeline {
-		position: relative;
-		padding: 2em 0;
-		margin-top: 2em;
-		margin-bottom: 2em;
-		}
-		#cd-timeline::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 25px;
-		height: 100%;
-		width: 4px;
-		background: #7E57C2;
-		}
-		@media only screen and (min-width: 1170px) {
-		#cd-timeline {
-			margin-top: 3em;
-			margin-bottom: 3em;
-		}
-		#cd-timeline::before {
-			left: 50%;
-			margin-left: -2px;
-		}
-		}
-
-		.cd-timeline-block {
-		position: relative;
-		margin: 2em 0;
-		}
-		.cd-timeline-block:after {
-		content: "";
-		display: table;
-		clear: both;
-		}
-		.cd-timeline-block:first-child {
-		margin-top: 0;
-		}
-		.cd-timeline-block:last-child {
-		margin-bottom: 0;
-		}
-		@media only screen and (min-width: 1170px) {
-		.cd-timeline-block {
-			margin: 4em 0;
-		}
-		.cd-timeline-block:first-child {
-			margin-top: 0;
-		}
-		.cd-timeline-block:last-child {
-			margin-bottom: 0;
-		}
-		}
-
-		.cd-timeline-img {
-		position: absolute;
-		top: 8px;
-		left: 12px;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		box-shadow: 0 0 0 4px #7E57C2, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-		}
-		.cd-timeline-img {
-		background: #673AB7;
-		}
-		@media only screen and (min-width: 1170px) {
-		.cd-timeline-img {
-			width: 30px;
-			height: 30px;
-			left: 50%;
-			margin-left: -15px;
-			margin-top: 15px;
-			/* Force Hardware Acceleration in WebKit */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-		}
-		}
-
-		.cd-timeline-content {
-		position: relative;
-		margin-left: 60px;
-		margin-right: 30px;
-		background: #333C42;
-		border-radius: 2px;
-		padding: 1em;
-		.timeline-content-info {
-			background: #2B343A;
-			padding: 5px 10px;
-			color: rgba(255,255,255,0.7);
-			font-size: 12px;
-			box-shadow:  inset 0 2px 0 rgba(0, 0, 0, 0.08);
-			border-radius: 2px;
-			i {
-			margin-right: 5px;
-			}
-			.timeline-content-info-title, .timeline-content-info-date {  
-			width: calc(50% - 2px);
-			display: inline-block;
-			}
-			@media (max-width: 500px) {
-			.timeline-content-info-title, .timeline-content-info-date {  
-				display: block;
-				width:100%;
-			} 
-			}
-		}
-		.content-skills {
-			font-size: 12px;
-			padding:0;
-			margin-bottom: 0;
-			display:flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			li {
-			background: #40484D;
-			border-radius: 2px;
-			display: inline-block;
-			padding: 2px 10px;
-			color: rgba(255,255,255,0.7);
-			margin: 3px 2px;
-			text-align: center;
-			flex-grow: 1;
-			}
-		}
-		}
-		.cd-timeline-content:after {
-		content: "";
-		display: table;
-		clear: both;
-		}
-		.cd-timeline-content h2 {
-		color: rgba(255,255,255,.9);
-		margin-top:0;
-		margin-bottom: 5px;
-		}
-		.cd-timeline-content, .cd-timeline-content .cd-date {
-		color:black;
-		Font-size: 13px;
-		font-size: 0.8125rem;
-		padding-right: 40px;
-		padding-top:23px;
-
-		}
-		.cd-timeline-content .cd-date {
-		display: inline-block;
-		}
-		.cd-timeline-content p {
-		margin: 1em 0;
-		line-height: 1.6;
-		}
-
-		.cd-timeline-content::before {
-		content: '';
-		position: absolute;
-		top: 16px;
-		right: 100%;
-		height: 0;
-		width: 0;
-		border: 7px solid transparent;
-		border-right: 7px solid #333C42;
-		}
-
-		@media only screen and (min-width: 768px) {
-		.cd-timeline-content h2 {
-			font-size: 20px;
-			font-size: 1.25rem;
-		}
-		.cd-timeline-content p {
-			font-size: 16px;
-			font-size: 12px;
-		}
-		.cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-			font-size: 14px;
-			//font-size: 0.875rem;
-			padding-left:40px;
-			padding-top:23px;
-		}
-		}
-		@media only screen and (min-width: 1170px) {
-		.cd-timeline-content {
-			color: white;
-			margin-left: 0;
-			padding: 1.6em;
-			width: 36%;
-			margin: 0 5%
-		}
-		.cd-timeline-content::before {
-			top: 24px;
-			left: 100%;
-			border-color: transparent;
-			border-left-color: #333C42;
-		}
-		.cd-timeline-content .cd-date {
-			position: absolute;
-			width: 100%;
-			left: 122%;
-			top: 6px;
-			font-size: 16px;
-			font-size: 12px;
-		}
-		.cd-timeline-block:nth-child(even) .cd-timeline-content {
-			float: right;
-		}
-		.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-			top: 24px;
-			left: auto;
-			right: 100%;
-			border-color: transparent;
-			border-right-color: #333C42;
-		}
-		.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
-			float: right;
-		}
-		.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
-			left: auto;
-			right: 122%;
-			text-align: right;
-		}
-}
-
-
-
-		.btn:focus, .btn:active, button:focus, button:active {
-		outline: none !important;
-		box-shadow: none !important;
-		}
-
-		#image-gallery .modal-footer{
-		display: block;
-		}
-
-		.thumb{
-		margin-top: 15px;
-		margin-bottom: 15px;
-		}
-		@media screen and (min-width: 700px) {
-			  .zoom {
-				transition: transform 1s; /* Animation */		 
-				margin: 0 auto;
-			}
-
-			.zoom:hover {			
-			  z-index: 1000;
-			  transform: scale(1.8); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-			}
-		}
-
-		</style>
-		
-	</head>
-
-	<body>
-		<div class="main-page-wrapper">
-
-
-
-			<!-- 
-			=============================================
-				Theme Header
-			============================================== 
-			-->
-			<header class="theme-main-header">
-				<div class="container">
-					<a href="index.html" class="logo float-left tran4s"><img src="images/logo/logo.png" alt="Logo"></a>
-					
-					<!-- ========================= Theme Feature Page Menu ======================= -->
-					<nav class="navbar float-right theme-main-menu one-page-menu">
-					   <!-- Brand and toggle get grouped for better mobile display -->
-					   <div class="navbar-header">
-					     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-					       <span class="sr-only">Toggle navigation</span>
-					       Menu
-					       <i class="fa fa-bars" aria-hidden="true"></i>
-					     </button>
-					   </div>
-					   <!-- Collect the nav links, forms, and other content for toggling -->
-					   <div class="collapse navbar-collapse" id="navbar-collapse-1">
-					     <ul class="nav navbar-nav">
-					       	<li class="active"><a href="#home">HOME</a></li>
-							<li><a href="#about-us">ABOUT</a></li>
-							<li><a href="#service-section">Coutries</a></li>
-							<li><a href="#comment-section">Customer Comments</a></li>
-							<li><a href="#project-section">Gallery</a></li>
-							<li class='hidden'><a href="#team-section" >TEAM</a></li>
-							<li><a href="#skill-section">Skill</a></li>
-							<li><a href="#schedule">My schedule</a></li>
-							<li class='hidden'><a href="#our-client">CLIENTS</a></li>
-							<li class='hidden'><a href="#pricing-section">Pricing</a></li>
-							<li class="dropdown-holder hidden"><a href="#blog-section">BLOG</a>
-								<ul class="sub-menu">
-					       			<li><a href="blog-details.html" class="tran3s">Blog Details</a></li>
-					       		</ul>
-							</li>
-							<li><a href="#contact-section">CONTACT</a></li>
-					     </ul>
-					   </div><!-- /.navbar-collapse -->
-					</nav> <!-- /.theme-feature-menu -->
-				</div>
-			</header> <!-- /.theme-main-header -->
-
-			
-			<!--
-			=====================================================
-				Theme Main SLider
-			=====================================================
-			-->
-			<div id="home" class="banner">
-	        	<div class="rev_slider_wrapper">
-					<!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
-						<div id="main-banner-slider" class="rev_slider video-slider" data-version="5.0.7">
-							<ul>
-									<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="others" data-description="aaaa">
-											<!-- MAIN IMAGE -->
-											<img src="images/home/slide-1-old.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-											
-											<!-- LAYERS -->
-		
-											<!-- LAYER NR. 1 -->
-											<div class="tp-caption" 
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-												data-width="none"
-												data-height="none"
-												data-whitespace="nowrap"
-												data-transform_idle="o:1;"
-									 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="1000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on" 
-												style="z-index: 6; white-space: nowrap;">
-												<h1>Sunny Tour Leader </h1>
-											</div>
-		
-											<!-- LAYER NR. 2 -->
-											<div class="tp-caption" 
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-												data-width="none"
-												data-height="none"
-												data-whitespace="nowrap"
-												data-transform_idle="o:1;"
-									 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="2000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on" 
-												style="z-index: 6; white-space: nowrap;">
-												<h4 style="color:#ffffff;">I am a Freelance Tour Leader</h4>
-																						
-											</div>
-		
-		
-											<!-- LAYER NR. 3 -->
-											<div class="tp-caption"
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['52','52','125','80']"
-												data-transform_idle="o:1;"							 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="3000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on">
-												<a href="#contact-section" class="project-button hvr-bounce-to-right">Tel : 070 989 007</a>
-											</div>								
-										</li>
-								<!-- SLIDE1  -->
-								<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="others" data-description="aaaa">
-									<!-- MAIN IMAGE -->
-									<img src="images/home/slide-1.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-									
-									<!-- LAYERS -->
-
-									<!-- LAYER NR. 1 -->
-									<div class="tp-caption" 
-										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-										data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-										data-width="none"
-										data-height="none"
-										data-whitespace="nowrap"
-										data-transform_idle="o:1;"
-							 
-										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-										data-mask_in="x:0px;y:[100%];" 
-										data-mask_out="x:inherit;y:inherit;" 
-										data-start="1000" 
-										data-splitin="none" 
-										data-splitout="none" 
-										data-responsive_offset="on" 
-										style="z-index: 6; white-space: nowrap;">
-										<h1>Sunny Tour Leader </h1>
-									</div>
-
-									<!-- LAYER NR. 2 -->
-									<div class="tp-caption" 
-										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-										data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-										data-width="none"
-										data-height="none"
-										data-whitespace="nowrap"
-										data-transform_idle="o:1;"
-							 
-										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-										data-mask_in="x:0px;y:[100%];" 
-										data-mask_out="x:inherit;y:inherit;" 
-										data-start="2000" 
-										data-splitin="none" 
-										data-splitout="none" 
-										data-responsive_offset="on" 
-										style="z-index: 6; white-space: nowrap;">
-										<h4 style="color :yellow;">I am a Freelance Tour Leader</h4>
-																				
-									</div>
-
-
-									<!-- LAYER NR. 3 -->
-									<div class="tp-caption"
-										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-										data-y="['middle','middle','middle','middle']" data-voffset="['52','52','125','80']"
-										data-transform_idle="o:1;"							 
-										data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-										data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-										data-mask_in="x:0px;y:[100%];" 
-										data-mask_out="x:inherit;y:inherit;" 
-										data-start="3000" 
-										data-splitin="none" 
-										data-splitout="none" 
-										data-responsive_offset="on">
-										<a href="#contact-section" class="project-button hvr-bounce-to-right">Tel : 070 989 007</a>
-									</div>								
-								</li>
-								<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="others" data-description="aaaa">
-										<!-- MAIN IMAGE -->
-										<img src="images/home/slide-2.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-										
-										<!-- LAYERS -->
-	
-										<!-- LAYER NR. 1 -->
-										<div class="tp-caption" 
-											data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-											data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-											data-width="none"
-											data-height="none"
-											data-whitespace="nowrap"
-											data-transform_idle="o:1;"
-								 
-											data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-											data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-											data-mask_in="x:0px;y:[100%];" 
-											data-mask_out="x:inherit;y:inherit;" 
-											data-start="1000" 
-											data-splitin="none" 
-											data-splitout="none" 
-											data-responsive_offset="on" 
-											style="z-index: 6; white-space: nowrap;">
-											<h1>Sunny Tour Leader </h1>
-										</div>
-	
-										<!-- LAYER NR. 2 -->
-										<div class="tp-caption" 
-											data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-											data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-											data-width="none"
-											data-height="none"
-											data-whitespace="nowrap"
-											data-transform_idle="o:1;"
-								 
-											data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-											data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-											data-mask_in="x:0px;y:[100%];" 
-											data-mask_out="x:inherit;y:inherit;" 
-											data-start="2000" 
-											data-splitin="none" 
-											data-splitout="none" 
-											data-responsive_offset="on" 
-											style="z-index: 6; white-space: nowrap;">
-											<h4 style="color :yellow;">I am a Freelance Tour Leader</h4>
-																					
-										</div>
-	
-	
-										<!-- LAYER NR. 3 -->
-										<div class="tp-caption"
-											data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-											data-y="['middle','middle','middle','middle']" data-voffset="['52','52','125','80']"
-											data-transform_idle="o:1;"							 
-											data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-											data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-											data-mask_in="x:0px;y:[100%];" 
-											data-mask_out="x:inherit;y:inherit;" 
-											data-start="3000" 
-											data-splitin="none" 
-											data-splitout="none" 
-											data-responsive_offset="on">
-											<a href="#contact-section" class="project-button hvr-bounce-to-right">Tel : 070 989 007</a>
-										</div>								
-									</li>
-									<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="others" data-description="aaaa">
-											<!-- MAIN IMAGE -->
-											<img src="images/home/slide-3.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-											
-											<!-- LAYERS -->
-		
-											<!-- LAYER NR. 1 -->
-											<div class="tp-caption" 
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-												data-width="none"
-												data-height="none"
-												data-whitespace="nowrap"
-												data-transform_idle="o:1;"
-									 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="1000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on" 
-												style="z-index: 6; white-space: nowrap;">
-												<h1>Sunny Tour Leader </h1>
-											</div>
-		
-											<!-- LAYER NR. 2 -->
-											<div class="tp-caption" 
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-												data-width="none"
-												data-height="none"
-												data-whitespace="nowrap"
-												data-transform_idle="o:1;"
-									 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="2000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on" 
-												style="z-index: 6; white-space: nowrap;">
-												<h4 style="color :yellow;">I am a Freelance Tour Leader</h4>
-																						
-											</div>
-		
-		
-											<!-- LAYER NR. 3 -->
-											<div class="tp-caption"
-												data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-												data-y="['middle','middle','middle','middle']" data-voffset="['52','52','125','80']"
-												data-transform_idle="o:1;"							 
-												data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-												data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-												data-mask_in="x:0px;y:[100%];" 
-												data-mask_out="x:inherit;y:inherit;" 
-												data-start="3000" 
-												data-splitin="none" 
-												data-splitout="none" 
-												data-responsive_offset="on">
-												<a href="#contact-section" class="project-button hvr-bounce-to-right">Tel : 070 989 007</a>
-											</div>								
-										</li>
-										<li data-index="rs-280" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-title="others" data-description="aaaa">
-												<!-- MAIN IMAGE -->
-												<img src="images/home/slide-4.jpg"  alt="image" class="rev-slidebg" data-bgparallax="3" data-bgposition="center center" data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina="" data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0" data-scaleend="100" data-scalestart="140">
-												
-												<!-- LAYERS -->
-			
-												<!-- LAYER NR. 1 -->
-												<div class="tp-caption" 
-													data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-													data-y="['middle','middle','middle','middle']" data-voffset="['-58','-58','0','-50']" 
-													data-width="none"
-													data-height="none"
-													data-whitespace="nowrap"
-													data-transform_idle="o:1;"
-										 
-													data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-													data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-													data-mask_in="x:0px;y:[100%];" 
-													data-mask_out="x:inherit;y:inherit;" 
-													data-start="1000" 
-													data-splitin="none" 
-													data-splitout="none" 
-													data-responsive_offset="on" 
-													style="z-index: 6; white-space: nowrap;">
-													<h1>Sunny Tour Leader </h1>
-												</div>
-			
-												<!-- LAYER NR. 2 -->
-												<div class="tp-caption" 
-													data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-													data-y="['middle','middle','middle','middle']" data-voffset="['-05','-05','63','0']"
-													data-width="none"
-													data-height="none"
-													data-whitespace="nowrap"
-													data-transform_idle="o:1;"
-										 
-													data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-													data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-													data-mask_in="x:0px;y:[100%];" 
-													data-mask_out="x:inherit;y:inherit;" 
-													data-start="2000" 
-													data-splitin="none" 
-													data-splitout="none" 
-													data-responsive_offset="on" 
-													style="z-index: 6; white-space: nowrap;">
-													<h4 style="color :yellow;">I am a Freelance Tour Leader</h4>
-																							
-												</div>
-			
-			
-												<!-- LAYER NR. 3 -->
-												<div class="tp-caption"
-													data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-													data-y="['middle','middle','middle','middle']" data-voffset="['52','52','125','80']"
-													data-transform_idle="o:1;"							 
-													data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-													data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-													data-mask_in="x:0px;y:[100%];" 
-													data-mask_out="x:inherit;y:inherit;" 
-													data-start="3000" 
-													data-splitin="none" 
-													data-splitout="none" 
-													data-responsive_offset="on">
-													<a href="#contact-section" class="project-button hvr-bounce-to-right">Tel : 070 989 007</a>
-												</div>								
-											</li>
-                            </ul>	
-						</div>
-					</div><!-- END REVOLUTION SLIDER -->
-	        </div> <!--  /#banner -->
-	        <!--
-			=====================================================
-				About us Section
-			=====================================================
-			-->
-			<section id="about-us">
-				<div class="container">
-					<div class="theme-title">
-						<h2>ABOUT ME</h2>
-						<p>My name is Prem chanthorn (Called <b>Sunny Tour Leader</b>) , I am a freelance tour leader, I used to lead many groups for many agencies in Cambodia to other countries as Singapore,Malaysia,Vietnam and also lead group in Cambodia to other provinces.</a>.
-                        </p>
-					</div> <!-- /.theme-title -->
-
-					<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">MANAGEMENT</a></h5>
-								<p class='hidden'>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right hidden">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-camera" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">PHOTOGRAPHY</a></h5>
-								<p class='hidden'>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right hidden">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-life-ring" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">Service/Care/Support</a></h5>
-								<p class='hidden'>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right hidden">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-line-chart" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">Promoting</a></h5>
-								<p class='hidden'>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right hidden">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</section> <!-- /#about-us -->
-
-
-			<!--
-			=====================================================
-				Project Section
-			=====================================================
-			-->
-			<div id="service-section">
-				<div class="container">
-					<div class="theme-title">
-						<h2>I used to lead group to other countries as below</h2>
-						<p class="hidden">These all below are the projects that is the part of my development for company.I was working and developing all projects almost 2 years.</p>
-					</div> <!-- /.theme-title -->
-
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:30px;font-weight:bold;"><img src="images/flag/Cambodia.png" alt="Cambodia"></span></div>
-									<h6><a href="#" class="tran3s">Cambodia</a></h6>
-								</div>
-								<p>
-									I used to lead many groups to many places in Cambodia : mondulkiri,Kratie,Ratanakiri,Stung Treng,Siem reap Angkor,Angkor wat,Kampot,Phnom Penh City Tour
-								</p>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/Singapore.png" alt="Singapore"></span></div>
-									<h6><a href="#" class="tran3s">Singapore</a></h6>
-								</div>
-								<p>I used to lead to many famous in Singapore : Merlion Park, Sentosa Iland, Gardand By The Bay,The biggest Sea Aquarium,Marina Bay Sands,Shopping,Singapore City Tour</p>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/Vietnam.png" alt="Vietnam"></span></div>
-									<h6><a href="#" class="tran3s">Vietnam</a></h6>
-								</div>
-								<p>I used to lead group to Vietname many place : Ho Chi Minh City, Dalat, nha trang, Saigon Cathedral Church,Independence Palace,Central Post Office,Dalat Flower gardens.  </p>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/Malaysia.png" alt="Malaysia"></span></div>
-									<h6><a href="#" class="tran3s">Malaysia</a></h6>   
-								</div>
-								<p>I used to lead to many good place in Malaysia : Twince Towers,Batu Caves,Genting highland,Kuala Lumpur, Red house portuges, Putrajaya city,King Royal, independence square</p>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content" style="min-height:260px;">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/hongkong_flag.png" alt="Malaysia"></span></div>
-									<h6><a href="#" class="tran3s">HongKong</a></h6>   
-								<p>I used to lead to many good place in Hongkon</p>						
-								</div>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content" style="min-height:260px;">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/macua_flag.png" alt="Malaysia"></span></div>
-									<h6><a href="#" class="tran3s">Macau</a></h6>   
-								<p>I used to lead to many good places in Macau</p>						
-								</div>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content" style="min-height:260px;">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/china_flag.png" alt="Malaysia"></span></div>
-									<h6><a href="#" class="tran3s">China</a></h6>   
-								<p>I used to lead to many good places in China</p>						
-								</div>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-												
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single-service-content" style="min-height:260px;">
-								<div class="icon-heading tran3s">
-									<div class="icon tran3s"><span aria-hidden="true" style="font-size:35px;font-weight:bold;"><img src="images/flag/thailand_flag.png" alt="Malaysia"></span></div>
-									<h6><a href="#" class="tran3s">Thailand</a></h6>   
-								<p>I used to lead to many good places in thailand</p>						
-								</div>
-							</div> <!-- /.single-service-content -->
-						</div> <!-- /.col-lg -->
-
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</div> <!-- /#service-section -->
-			
-			
-			<!----- BEST COMMENTS ----------->
-			<div id="comment-section">					
-					<div class="container">
-						<div class="theme-title">
-							<h2>Best Comments From Customers</h2>
-						</div> <!-- /.theme-title -->			
-						
-						<div class="container" style="margin-top: 25px;">
-							<!----- ROW ------>
-							<div class="row">
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/15.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/14.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/13.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/12.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/11.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/10.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-								</div>		
-								<!----- EDN ROW ------>
-								
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/09.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/08.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/07.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/06.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/05.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/04.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-								</div>		
-								<!----- EDN ROW ------>
-								
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/03.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/02.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/01.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/01-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/02-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/03-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									
-								</div>		
-								<!----- EDN ROW ------>
-
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/04-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/05-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/06-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/07-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/08-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/09-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									
-								</div>		
-								<!----- EDN ROW ------>
-
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/10-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/11-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/12-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/13-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/14-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/15-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									
-								</div>		
-								<!----- EDN ROW ------>
-								<!----- ROW ------>
-								<div class="row">
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/16-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/17-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/18-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/19-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/20-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									<div class="col-lg-2 col-md-6 col-xs-12 thumb zoom">
-										<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-										   data-image="#"
-										   data-target="#image-gallery">
-											<img class="img-thumbnail"
-												 src="images/comment/21-140419.jpg"
-												 alt="Good Memory with Customer" width="1260" height="750">
-										</a>
-									</div>
-									
-								</div>		
-								<!----- EDN ROW ------>
-							</div>
-							<!----- EDN ROW ------>
-						</div>
-					</div>
-			</div>
-			
-			<!----- ///BEST COMMENTS ----------->
-			<!--
-			=====================================================
-				Career Section
-			=====================================================
-			-->
-			<div id="project-section">					
-							<div class="container">
-								<div class="theme-title">
-									<h2>Gallery - Best Memory with Customers</h2>
-								</div> <!-- /.theme-title -->			
-								
-								<div class="container" style="margin-top: 25px;">
-									<div class="row">
-
-										<div class="row">
-											<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-												<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-												   data-image="#"
-												   data-target="#image-gallery">
-													<img class="img-thumbnail"
-														 src="images/gallery/group-maranou-001.jpg"
-														 alt="Good Memory with Customer" width="1260" height="750">
-												</a>
-											</div>
-											<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-												<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-												   data-image="#"
-												   data-target="#image-gallery">
-													<img class="img-thumbnail"
-														 src="images/gallery/group-maranou.jpg"
-														 alt="Good Memory with Customer">
-												</a>
-											</div>
-								
-											<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-												<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-												   data-image="#"
-												   data-target="#image-gallery">
-													<img class="img-thumbnail"
-														 src="images/gallery/group-soprita.jpg"
-														 alt="Good Memory with Customer">
-												</a>
-											</div>
-											<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-												<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-												   data-image="#"
-												   data-target="#image-gallery">
-													<img class="img-thumbnail"
-														 src="images/gallery/group-vn-vdream-moyne.jpg"
-														 alt="Good Memory with Customer">
-												</a>
-											</div>
-										</div>	<!-- /.row -->
-
-										<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/group-pahee.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/group-pahee-melaka.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/group-vn-vdream.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/group-mytravell-001.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/dara6.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/sinoun-me.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail" style="width: 220px; height: 350px !important;"
-															 src="images/gallery/on-plan.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/Mey_me.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/me-vin.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/rtr-fri.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail"
-															 src="images/gallery/worldpop.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/jetstart-me.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/jp-sin.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/me-dependend.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail"
-															 src="images/gallery/me-gard.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/me-marina-bay-sand.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/marukan-me.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/long-dara-me-de.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail"
-															 src="images/gallery/sin-guide-lady.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/l-me-pech.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/2world-me.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/spechtrashow.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail"
-															 src="images/gallery/shiva-me.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/te-me-ta.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-											<div class="row">
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/01-140419emil.jpg"
-															 alt="Good Memory with Customer" width="1260" height="750">
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/140419hok.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-									
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-													   data-image="#"
-													   data-target="#image-gallery" > 
-														<img class="img-thumbnail"
-															 src="images/gallery/140419rith.jpg"
-															 alt="Good Memory with Customer"/>
-													</a>
-												</div>
-												<div class="col-lg-3 col-md-6 col-xs-12 thumb">
-													<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
-													   data-image="#"
-													   data-target="#image-gallery">
-														<img class="img-thumbnail"
-															 src="images/gallery/02-140419vdreamteam.jpg"
-															 alt="Good Memory with Customer">
-													</a>
-												</div>
-											</div>	<!-- /.row -->
-
-									</div> <!-- /.row -->
-								</div>
-							</div> <!-- /.container -->
-						</div>
-			</div> <!-- /#project-section -->
-
-			
-			<!--
-			=====================================================
-				Skill Section
-			=====================================================
-			-->
-			<div id="skill-section">
-				<div class="container">
-					<div class="clear-fix">
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="img"><img src="images/home/2.jpg" alt="Image"></div>
-						</div> <!-- /.col- -->
-
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="skills-progress skills">
-								<div class="habilidades_contenedor">
-							        <div class="codeconSkills">
-							            <div class="codeconSkillbar">
-							            	<div class="skill-text">
-							            		<span class="codeconSkillArea">English</span>
-							            	</div>
-							                <div class="skillBar" data-percent="90%">
-							                	<span class="PercentText">90%</span>
-							                </div>
-							            </div>
-							            <div class="codeconSkillbar">
-							            	<div class="skill-text">
-							            		<span class="codeconSkillArea ">Thai</span>
-							                    
-							            	</div>
-								            <div class="skillBar" data-percent="60%">
-								                <span class="PercentText">60%</span>
-								            </div>
-							            </div>
-								        <div class="codeconSkillbar">
-								        	<div class="skill-text">
-							            		<span class="codeconSkillArea">Chinese</span>
-							                    
-							            	</div>
-								            <div class="skillBar" data-percent="15%">
-								                <span class="PercentText">15%</span>
-								            </div>
-										</div>	
-										<div class="codeconSkillbar">
-								        	<div class="skill-text">
-							            		<span class="codeconSkillArea">PHOTOGRAPHY</span>
-							                    
-							            	</div>
-								            <div class="skillBar" data-percent="85%">
-								                <span class="PercentText">85%</span>
-								            </div>
-										</div>
-										<div class="codeconSkillbar">
-								        	<div class="skill-text">
-							            		<span class="codeconSkillArea">Problem solving</span>
-							                    
-							            	</div>
-								            <div class="skillBar" data-percent="90%">
-								                <span class="PercentText">90%</span>
-								            </div>
-										</div>
-										<div class="codeconSkillbar">
-								        	<div class="skill-text">
-							            		<span class="codeconSkillArea">Social media Promoting</span>
-							                    
-							            	</div>
-								            <div class="skillBar" data-percent="75%">
-								                <span class="PercentText">75%</span>
-								            </div>
-								        </div>							        
-								        </div>
-							    	</div> <!-- /.codeconSkills -->
-							    </div> <!-- /.habilidades_contenedor -->
-							</div> <!-- /.skills-progress -->
-						</div>
-					</div> <!-- /.clear-fix -->
-				</div> <!-- /.container -->
-			</div> <!-- /#skill-section -->
-
-
-
-			<!--
-			=====================================================
-				Our Client
-			=====================================================
-			-->
-			<div id="our-client" class='hidden'>
-				<div class="container">
-					<div class="theme-title">
-						<h2>OUR HAPPY CLIENTS</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-					</div> <!-- /.theme-title -->
-
-					<div class="client-slider">
-						<div class="item">
-							<img src="images/home/c1.jpg" alt="Client">
-							<p>Our successful construction approach is based on aggressive subcontractor administration, employ-ment of competent personnel, accurate schedule control, quality control and cost control. We employ only qualified subcontractors who share our goal in creating quality projects.</p>
-							<h6>- Spryte Loriano -</h6>
-						</div> <!-- /.item -->
-						<div class="item">
-							<img src="images/home/c2.jpg" alt="Client">
-							<p>Our successful construction approach is based on aggressive subcontractor administration, employ-ment of competent personnel, accurate schedule control, quality control and cost control. We employ only qualified subcontractors who share our goal in creating quality projects.</p>
-							<h6>- Spryte Loriano -</h6>
-						</div> <!-- /.item -->
-						<div class="item">
-							<img src="images/home/c3.jpg" alt="Client">
-							<p>Our successful construction approach is based on aggressive subcontractor administration, employ-ment of competent personnel, accurate schedule control, quality control and cost control. We employ only qualified subcontractors who share our goal in creating quality projects.</p>
-							<h6>- Spryte Loriano -</h6>
-						</div> <!-- /.item -->
-					</div> <!-- /.client-slider -->
-				</div> <!-- /.container -->
-			</div> <!-- /#our-client -->
-
-			
-
-			<!--
-			=====================================================
-				Pricing Section
-			=====================================================
-			-->
-			<div id="pricing-section" class='hidden'>
-				<div class="container">
-					<div class="clear-fix">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="single-price-table hvr-float-shadow">
-								<h4>Basic</h4>
-								<p>The best to start</p>
-								<strong class="color1">$9.99 <span>/monthly</span></strong>
-								<ul>
-									<li>3,600 Keywords</li>
-									<li>50 Social Accounts</li>
-									<li>25 Analytics Campaigns</li>
-									<li>45 Email Accounts</li>
-									<li>24/7 Support</li>
-								</ul>
-								<a href="#" class="tran3s p-color-bg">BUY IT NOW</a>
-							</div> <!-- /.single-price-table -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="single-price-table hvr-float-shadow">
-								<h4>Advanced</h4>
-								<p>The best to start</p>
-								<strong class="color2">$39.99 <span>/monthly</span></strong>
-								<ul>
-									<li>3,600 Keywords</li>
-									<li>50 Social Accounts</li>
-									<li>25 Analytics Campaigns</li>
-									<li>45 Email Accounts</li>
-									<li>24/7 Support</li>
-								</ul>
-								<a href="#" class="tran3s p-color-bg">BUY IT NOW</a>
-							</div> <!-- /.single-price-table -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="single-price-table hvr-float-shadow">
-								<h4>PREMIUM</h4>
-								<p>The best to start</p>
-								<strong class="color3">$59.99 <span>/monthly</span></strong>
-								<ul>
-									<li>3,600 Keywords</li>
-									<li>50 Social Accounts</li>
-									<li>25 Analytics Campaigns</li>
-									<li>45 Email Accounts</li>
-									<li>24/7 Support</li>
-								</ul>
-								<a href="#" class="tran3s p-color-bg">BUY IT NOW</a>
-							</div> <!-- /.single-price-table -->
-						</div> <!-- /.col -->
-					</div>
-				</div> <!-- /.container -->
-			</div> <!-- /#pricing-section -->
-
-
-
-			<!--
-			=====================================================
-				Blog Section
-			=====================================================
-			-->
-			<div id="schedule">
-				<div class="container">
-					<div class="theme-title">
-						<h2>MY SCHEDULE</h2>
-						<p style="font-size:20px;font-weight: bold;">Please kindly check my available date for your needed. Thanks </p>
-						<br/>
-					</div> <!-- /.theme-title -->
-
-					<div class="clear-fix">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 googleCalendar">
-								<iframe src="https://calendar.google.com/calendar/embed?title=Sunny%20Tour%20Calendar&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=classroom107781603399684756157%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Asia%2FBangkok" style="border-width:0" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
-						</div> <!-- /.col- -->
-					</div> <!-- /.clear-fix -->
-				</div> <!-- /.container -->
-			</div> <!-- /#blog-section -->
-
-
-
-			<!--
-			=====================================================
-				Partner Section
-			=====================================================
-			-->
-			<div id="ssschedule" class="hidden">
-				<div class="container">
-					<div id="partner_logo" class="owl-carousel owl-theme">
-						<div class="item"><img src="images/logo/p1.png" alt="logo"></div>
-						<div class="item"><img src="images/logo/p2.png" alt="logo"></div>
-						<div class="item"><img src="images/logo/p3.png" alt="logo"></div>
-						<div class="item"><img src="images/logo/p4.png" alt="logo"></div>
-						<div class="item"><img src="images/logo/p5.png" alt="logo"></div>
-						<div class="item"><img src="images/logo/p2.png" alt="logo"></div>
-					</div> <!-- End .partner_logo -->
-				</div> <!-- /.container -->
-			</div> <!-- /#schedule -->
-
-
-
-			<!--
-			=====================================================
-				Contact Section
-			=====================================================
-			-->
-			<div id="contact-section">
-				<div class="container">
-					<div class="clear-fix contact-address-content">
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="left-side">
-								<h2>Contact Info</h2>
-								<p>Phnom Penh, Cambodia</p>
-
-								<ul>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-										<h6>Address</h6>
-										<p>Phnom Penh, Cambodia</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-phone" aria-hidden="true"></i></div>
-										<h6>Phone</h6>
-										<p>+855 70 989 007</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-										<h6>Email</h6>
-										<p>sunnytourleader@gmail.com</p>
-									</li>
-								</ul>
-							</div> <!-- /.left-side -->
-						</div> <!-- /.col- -->
-
-
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="map-area">
-								<h2>Our Location</h2>
-								<div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31268.77870533863!2d104.8641481161449!3d11.580697044763191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x4fbec13ccbb4c0c7!2z4Z6X4Z-S4Z6T4Z-G4Z6W4Z-B4Z6JLCDhnprhnrbhnofhnpLhnrbhnpPhnrjigIvhnpfhn5LhnpPhn4bhnpbhn4Hhnok!5e0!3m2!1skm!2skh!4v1532264738824" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                </div>
-							</div> <!-- /.map-area -->
-						</div> <!-- /.col- -->
-					</div> <!-- /.contact-address-content -->
-
-
-
-					<!-- Contact Form -->
-					<div class="send-message hidden">
-						<h2>Send Message</h2>
-
-						<form action="inc/sendemail.php" class="form-validation" autocomplete="off" method="post">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="First Name*" name="Fname">
-									</div> <!-- /.single-input -->
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="Last Name*" name="Lname">
-									</div> <!-- /.single-input -->
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-									<div class="single-input">
-										<input type="email" placeholder="Your Email*" name="email">
-									</div> <!-- /.single-input -->
-								</div>
-							</div> <!-- /.row -->
-							<div class="single-input">
-								<input type="text" placeholder="Subject" name="sub">
-							</div> <!-- /.single-input -->
-							<textarea placeholder="Write Message" name="message"></textarea>
-
-
-							<button class="tran3s p-color-bg">Send Message</button>
-						</form>
-
-
-						<!-- Contact Form Validation Markup -->
-						<!-- Contact alert -->
-						<div class="alert-wrapper" id="alert-success">
-							<div id="success">
-								<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-								<div class="wrapper">
-					               	<p>Your message was sent successfully.</p>
-					             </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					    <div class="alert-wrapper" id="alert-error">
-					        <div id="error">
-					           	<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-					           	<div class="wrapper">
-					               	<p>Sorry!Something Went Wrong.</p>
-					            </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					</div> <!-- /.send-message -->				
-			</div> <!-- /#contact-section -->
-			<!--
-			=====================================================
-				Footer
-			=====================================================
-			-->
-			<footer>
-				<div class="container">
-					<a href="index.html" class="logo"><img src="images/logo/logo.png" alt="Logo"></a>
-
-					<ul>
-						<li><a href="https://facebook.com/sunny.tourleader.1" class="tran3s round-border" target='_new'><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						
-						<li class="hidden"><a href="https://twitter.com/ChanthornPrem" class="tran3s round-border" target='_new'><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="https://www.pinterest.com/pchanthorn/" class="tran3s round-border" target='_new'><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="https://www.linkedin.com/in/premchanthorn/" class="tran3s round-border" target='_new'><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="#" class="tran3s round-border hidden"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="#" class="tran3s round-border hidden"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="#" class="tran3s round-border hidden"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-						<li class="hidden"><a href="#" class="tran3s round-border hidden"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-					</ul>
-					<p>Copyright @2018 All rights reserved</p>
-				</div>
-			</footer>
-
-
-
-
-			<!-- =============================================
-				Loading Transition
-			============================================== -->
-			<div id="loader-wrapper">
-				<div id="preloader_1">
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	                <span></span>
-	            </div>
-			</div>
-
-			
-	        <!-- Scroll Top Button -->
-			<button class="scroll-top tran3s p-color-bg">
-				<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html"><span>Sunny Tour Leader</span></a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
 			</button>
 
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="home"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="about"><span>About</span></a></li>
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="projects"><span>Good Comment</span></a>
+					</li>
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="team"><span>Team</span></a></li>
+					<li class="nav-item" style="display:none;"><a href="#" class="nav-link"
+							data-nav-section="testimony"><span>Destinations</span></a>
+					</li>
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="blog"><span>Schedule</span></a></li>
+					<li class="nav-item"><a href="#" class="nav-link" data-nav-section="contact"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section class="hero-wrap js-fullheight" style="background-image: url('images/bg/BgGardenByTheBay.jpg');"
+		data-section="home">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
+				data-scrollax-parent="true">
+				<div class="col-md-8 ftco-animate mt-5" data-scrollax=" properties: { translateY: '70%' }">
+					<h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">We have a passion to provide
+						the best service to all agencies in Cambodia </h1>
+					<p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Try to be the professional
+						Tour Leader in Cambodia</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="ftco-section ftco-services ftco-no-pt">
+		<div class="container">
+			<div class="row services-section">
+				<div class="col-md-4 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services text-center d-block">
+						<div class="icon"><span class="flaticon-layers"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Servicen & Care</h3>
+							<p>Imagine your customer is your best friend — listen to their concerns, be a shoulder to lean on, and
+								then shift the focus from what went wrong to how you can help make it right.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services text-center d-block">
+						<div class="icon"><span class="flaticon-compass-symbol"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Promoting</h3>
+							<p>Promoting Company by sharing information about company and the destinations that provide by company.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services text-center d-block">
+						<div class="icon"><span class="flaticon-layers"></span></div>
+						<div class="media-body">
+							<h3 class="heading mb-3">Photography</h3>
+							<p>Take the best picuture for our customers, We don’t make a photograph just with a camera. We bring to
+								the act of photography all the pictures you have seen.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="section-counter" data-section="about">
+		<div class="container">
+			<div class="row d-flex">
+
+				<div class="col-md-12 col-lg-12 pl-lg-5 py-5">
+					<div class="row justify-content-start pb-3">
+						<div class="col-md-12 heading-section ftco-animate">
+							<span class="subheading">Welcome</span>
+							<h2 class="mb-4">Since I started work in 2017</h2>
+							<p>
+								My name is <b>Prem chanthorn</b> <b><i style="color:#000000;">(Called Sunny Tour Leader)</i></b> , I am
+								a freelance tour leader, I used to lead many groups to other countries as
+								Japan,Singapore,Malaysia,Vietnam,Thailand,HongKong,Macau,Shenzhen,Zhuhai and also lead group in Cambodia
+								to other provinces for many agencies in Cambodia...
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate d-flex">
+							<div class="block-18 text-center p-4 mb-4 align-self-stretch d-flex">
+								<div class="text">
+									<strong class="number" data-number="2">0</strong>
+									<span>Years of experience</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate d-flex">
+							<div class="block-18 text-center py-4 px-3 mb-4 align-self-stretch d-flex">
+								<div class="text">
+									<strong class="number" data-number="12">0</strong>
+									<span>Company Leaded</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate d-flex">
+							<div class="block-18 text-center py-4 px-3 mb-4 align-self-stretch d-flex">
+								<div class="text">
+									<strong class="number" data-number="30">0</strong>
+									<span>Groups Leaded</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate d-flex">
+							<div class="block-18 text-center py-4 px-3 mb-4 align-self-stretch d-flex">
+								<div class="text">
+									<strong class="number" data-number="10">0</strong>
+									<span>Country Leaded</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-project bg-light" data-section="projects">
+		<div class="container-fluid px-md-5">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Good Comments</h2>
+					<p>All comments below are from my customers who I leaded to all destinations.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 testimonial">
+					<div class="carousel-project owl-carousel">
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/02.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/02.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/03.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/03.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/04.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/04.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/05.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/05.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/06.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/06.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/07.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/07.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/08.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/08.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/01.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/01.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/10.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/10.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/11.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/11.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/12.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/12.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/13.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/13.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/14.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/14.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/15.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/15.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/01-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/01-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/02-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/02-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/03-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/03-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/04-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/04-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/05-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/05-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/06-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/06-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/07-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/07-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/08-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/08-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/09-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/09-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/10-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/10-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/11-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/11-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/12-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/12-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/13-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/13-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/14-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/14-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/15-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/15-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/16-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/16-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/17-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/17-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/18-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/18-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/19-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/19-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/20-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/20-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/21-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/21-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/22-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/22-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="project">
+								<div class="img">
+									<img src="images/comment/23-140419.jpg" class="img-fluid" alt="Colorlib Template">
+									<a href="images/comment/23-140419.jpg"
+										class="icon image-popup d-flex justify-content-center align-items-center">
+										<span class="icon-expand"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section" data-section="team">
+		<div class="container-fluid p-0">
+			<div class="row no-gutters justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">Team</span>
+					<h2 class="mb-4">Service On The Fingures</h2>
+					<p>All below is the memeber of Service On The Fingures.</p>
+				</div>
+			</div>
+			<div class="row no-gutters">
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch" style="background-image: url(images/Team/PheavinTourLeader.jpg);">
+							</div>
+						</div>
+						<div class="text d-flex align-items-center pt-3 text-center">
+							<div>
+								<span class="position mb-2">Tour Leader</span>
+								<h3 class="mb-4">Pheavin Tour Leader</h3>
+								<div class="faded">
+									<p>Language Skill : English 90%,Thai 80%,chinese 60%</p>
+									<ul class="ftco-social text-center">
+										<li class="ftco-animate"><a href="https://www.facebook.com/pheavinly.tourleader" target="_new"><span
+													class="icon-facebook"></span></a></li>
+										<li class="ftco-animate"><a href="https://premchanthorn.github.io/pheavintourleader/"
+												target="_newq"><span class="icon-globe"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch" style="background-image: url(images/Team/KhengSotheara.jpg);"></div>
+						</div>
+						<div class="text d-flex align-items-center pt-3 text-center">
+							<div>
+								<span class="position mb-2">Tour Leader</span>
+								<h3 class="mb-4">Kheng Sotheara</h3>
+								<div class="faded">
+									<p>Language Skill : English 95%, Good Team player</p>
+									<ul class="ftco-social text-center">
+										<li class="ftco-animate"><a href="https://www.facebook.com/Sotheararithy" target="_new"><span
+													class="icon-facebook"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch" style="background-image: url(images/Team/PhatSohpeak.jpg);"></div>
+						</div>
+						<div class="text d-flex align-items-center pt-3 text-center">
+							<div>
+								<span class="position mb-2">Tour Leader</span>
+								<h3 class="mb-4">Phat Sopheak</h3>
+								<div class="faded">
+									<p>Language Skill : English 95%, Good Team player</p>
+									<ul class="ftco-social text-center">
+										<li class="ftco-animate"><a href="https://www.facebook.com/sopheak.phat" target="_new"><span
+													class="icon-facebook"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="staff">
+						<div class="img-wrap d-flex align-items-stretch">
+							<div class="img align-self-stretch" style="background-image: url(images/Team/SunnyTourLeader2.jpg);">
+							</div>
+						</div>
+						<div class="text d-flex align-items-center pt-3 text-center">
+							<div>
+								<span class="position mb-2">Tour Leader</span>
+								<h3 class="mb-4">Sunny Tour Leader</h3>
+								<div class="faded">
+									<p>Language Skill : English 90%,Thai 40%,chinese 20%</p>
+									<ul class="ftco-social text-center">
+										<li class="ftco-animate"><a href="https://twitter.com/sunnytourleader" target="_new"><span
+													class="icon-twitter"></span></a></li>
+										<li class="ftco-animate"><a href="https://www.facebook.com/sunny.tourleader.1" target="_new"><span
+													class="icon-facebook"></span></a></li>
+										<li class="ftco-animate"><a href="https://sunnytourleader.github.io/sunnytourleader"
+												target="_new"><span class="icon-globe"></span></a></li>
+										<li class="ftco-animate"><a href="https://www.instagram.com/sunnytourleader/" target="_new"><span
+													class="icon-instagram"></span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="testimony-section" data-section="testimony" style="display:none;">
+		<div class="container">
+			<div class="row no-gutters justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Good Comments from Customers</h2>
+					<p>All comments below are from my customers who I leaded to all destinations</p>
+				</div>
+			</div>
+			<div class="row ftco-animate justify-content-center">
+				<div class="col-md-12 d-flex align-items-center">
+					<div class="carousel-testimony owl-carousel">
+						<div class="item">
+							<div class="testimony-wrap d-flex align-items-stretch">
+								<div class="user-img d-flex align-self-stretch" style="background-image: url(images/testimony-1.jpg)">
+								</div>
+								<div class="text d-flex align-items-center">
+									<div>
+										<div class="icon-quote">
+											<span class="icon-quote-left"></span>
+										</div>
+										<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+											Consonantia, there live the blind texts. A small river named Duden flows by their place and
+											supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts
+											of sentences fly into your mouth.</p>
+										<p class="name">Jacob Bolton</p>
+										<span class="position">CEO, Founder</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap d-flex align-items-stretch">
+								<div class="user-img d-flex align-self-stretch" style="background-image: url(images/testimony-2.jpg)">
+								</div>
+								<div class="text d-flex align-items-center">
+									<div>
+										<div class="icon-quote">
+											<span class="icon-quote-left"></span>
+										</div>
+										<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+											Consonantia, there live the blind texts. A small river named Duden flows by their place and
+											supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts
+											of sentences fly into your mouth.</p>
+										<p class="name">Jacob Bolton</p>
+										<span class="position">CEO, Founder</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light" data-section="blog">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Schedule</h2>
+					<p>Please kindly check my available date you need below. Thnaks </p>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 googleCalendar">
+					<iframe
+						src="https://calendar.google.com/calendar/embed?title=Sunny%20Tour%20Calendar&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=classroom107781603399684756157%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Asia%2FBangkok"
+						style="border-width:0" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
+				</div> <!-- /.col- -->
+
+			</div>
+
+		</div>
+	</section>
+	<section class="ftco-section contact-section" data-section="contact">
+		<div class="col-md-12 heading-section text-center">
+
+			<h2 class="mb-4">Contact Us</h2>
+			<p>Please kindly check my below contact, Thanks </p>
+		</div>
+		<div class="container">
+			<div class="row d-flex contact-info ftco-animate">
+				<div class="col-md-6 col-lg-3 d-flex">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<h3 class="mb-4">Address</h3>
+						<p>Phnom Penh, Cambodia</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p>
+							<a href="tel://+85570989007">+855 70 989 007</a><br />
+							<a href="tel://+85599570432">+855 99 570 432</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4">Email Address</h3>
+						<p><a href="#">sunnytourleader@gmail.com</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-facebook"></span>
+						</div>
+						<h3 class="mb-4">Facebook</h3>
+						<p><a href="https://www.facebook.com/sunny.tourleader.1" target="_new">Sunny Tour Leader</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Service On the Fingures</h2>
+						<p>Provide the best serivce to all agencies and make customers have more memory with us</p>
+						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+							<li class="ftco-animate"><a href="https://twitter.com/sunnytourleader" target="_new"><span
+										class="icon-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.facebook.com/sunny.tourleader.1" target="_new"><span
+										class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="https://www.instagram.com/sunnytourleader/" target="_new"><span
+										class="icon-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-4" style="display:none;">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Destinations</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4" style="display:none;">
+						<h2 class="ftco-heading-2">Services</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Architectural Design</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Interior Design</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Exterior Design</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Lighting Design</a></li>
+							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>AutoCAD Service</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Have a Questions?</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon icon-map-marker"></span><span class="text">Phnom Penh, Cambodia</span></li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+855 70 989 007</span></a></li>
+								<li><a href="#"><span class="icon icon-envelope"></span><span
+											class="text">sunnytourleader@gmail.com</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;<script>
+							document.write(new Date().getFullYear());
+						</script> All rights reserved | This template is made <i class="icon-heart color-danger"
+							aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Sunny Tour Leader</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 
-		<!-- Js File_________________________________ -->
-
-		<!-- j Query -->
-
-
-		
-		<script type="text/javascript" src="vendor/jquery.2.2.3.min.js"></script>
-
-		<!-- Bootstrap JS -->
-		<script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
-
-		<!-- Vendor js _________ -->
-		
-		<!-- revolution -->
-		<script src="vendor/revolution/jquery.themepunch.tools.min.js"></script>
-		<script src="vendor/revolution/jquery.themepunch.revolution.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.slideanims.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.layeranimation.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.navigation.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.kenburn.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.actions.min.js"></script>
-		<script type="text/javascript" src="vendor/revolution/revolution.extension.video.min.js"></script>
-
-		<!-- Google map js -->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=goMap" type="text/javascript"></script> <!-- Gmap Helper -->
-		<script src="vendor/gmaps.min.js"></script>
-		<!-- owl.carousel -->
-		<script type="text/javascript" src="vendor/owl-carousel/owl.carousel.min.js"></script>
-		<!-- mixitUp -->
-		<script type="text/javascript" src="vendor/jquery.mixitup.min.js"></script>
-		<!-- Progress Bar js -->
-		<script type="text/javascript" src="vendor/skills-master/jquery.skills.js"></script>
-		<!-- Validation -->
-		<script type="text/javascript" src="vendor/contact-form/validate.js"></script>
-		<script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script>
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" /></svg></div>
 
 
-		<!-- Theme js -->
-		<script type="text/javascript" src="js/theme.js"></script>
-		<script type="text/javascript" src="js/map-script.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
+	</script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
 
-		</div> <!-- /.main-page-wrapper -->
-	</body>
+</body>
+
 </html>
